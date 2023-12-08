@@ -1,4 +1,4 @@
-# Code for the analysis of samples used in the Engesser et al. manuscript
+# Code for the analysis of samples used in the manuscript "Immune profiling-based targeting of pathogenic T cells with ustekinumab in ANCA-associated glomerulonephritis"
 Place the aligned data in folder ```data```.
 All code required to reproduce the results is available in the folder ```notebooks```.
 The folder ```annotations_visium*``` contains expert-annotations of the Visium samples
