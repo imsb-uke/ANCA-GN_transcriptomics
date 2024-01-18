@@ -1,5 +1,7 @@
 ## Code for the analysis of samples used in the manuscript "Immune profiling-based targeting of pathogenic T cells with ustekinumab in ANCA-associated glomerulonephritis"
-### Instuctions
+
+
+### Instructions for Visium analysis
 
 **Data preparation**
 1. Place the cellranger- and spaceranger-aligned data in folder ```data```. For ther versions used in the manuscript, please refer to the methods section of the manuscript.
@@ -10,3 +12,12 @@ Guided code for required to reproduce the results is available in the folder ```
 The folders ```annotations_visium*``` contain expert-annotations of the Visium samples
 
 If you encounter any problem, please open an issue. 
+
+
+### Instructions for single-cell analysis
+
+**Data preparation**
+Place the cellranger-aligned data in the folder ```data```. For the correct version please refer to the methods section of the manuscript.
+
+**Analysis workflow**
+The analysis workflow for the single-cell data (CITEseq and scRNAseq) is detailed in the folder ```notebooks\single-cell```. We further split the code for each cohort, namely the exploratory and the ustekinumab treatment cohort. The corresponding code is available in the folders ```notebooks\single-cell\exploratory_cohort``` and ```notebooks\single-cell\ustekinumab_cohort```, respectively.
