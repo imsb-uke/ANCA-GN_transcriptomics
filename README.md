@@ -7,9 +7,11 @@
 1. Place the cellranger- and spaceranger-aligned data in folder ```data```. For the versions used in the manuscript, please refer to the methods section of the manuscript.
 2. Place the TIF files corresponding to each spatial sample in the folder ```tif_processed```
 
-Guided code for required to reproduce the results is available in the folder ```notebooks```. The second step of the processing is too big to push to GitHub, this can be downloaded from [02_cluster.ipynb](https://drive.google.com/file/d/11mMGel0VzCgbqmvUIG5L2zHP9qBJGoqu/view?usp=sharing)
-
 The folders ```annotations_visium*``` contain expert-annotations of the Visium samples
+
+**Analysis workflow**
+
+Guided code for required to reproduce the results is available in the folder ```notebooks```. The second step of the processing is too big to push to GitHub, this can be downloaded from [02_cluster.ipynb](https://drive.google.com/file/d/11mMGel0VzCgbqmvUIG5L2zHP9qBJGoqu/view?usp=sharing)
 
 ### Instructions for single-cell analysis
 
@@ -21,4 +23,4 @@ Place the cellranger-aligned data in the folder ```data```. For the correct vers
 
 The analysis workflow for the single-cell data (CITEseq and scRNAseq) is detailed in the folder ```notebooks\single-cell```. We further split the code for each cohort, namely the exploratory and the ustekinumab treatment cohort. The corresponding code is available in the folders ```notebooks\single-cell\exploratory_cohort``` and ```notebooks\single-cell\ustekinumab_cohort```, respectively.
 
-If you encounter any problem, please open an issue.
+**If you encounter any problem, please open an issue.**
