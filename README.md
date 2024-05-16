@@ -15,6 +15,15 @@ Guided code for required to reproduce the results is available in the folder ```
 
 ### Instructions for single-cell analysis
 
+**System requirements and installation**
+
+We ran the code in an Ubuntu 20.04 environment. To setup the single-cell analysis Python environment, please run the following commands:
+
+```bash
+conda env create -f envs/sc-env.yml
+conda activate sc-env
+```
+
 **Data preparation**
 
 Place the cellranger-aligned data in the folder ```data```. For the correct version please refer to the methods section of the manuscript.
