@@ -7,7 +7,7 @@ from matplotlib import gridspec
 import math
 import pprint
 import matplotlib.colors as mcolors
-from source.utils import find_overlap
+from utils.utils import find_overlap
 import matplotlib as mpl
 from tqdm import tqdm
 from adjustText import adjust_text
@@ -2057,3 +2057,76 @@ def custom_umap_slim(
     )
     plt.axis("off")
     return fig, texts
+
+
+def plot_key_compositon_for_groups(
+    adata,
+    groupby,
+    key,
+    colors,
+    figsize=(2, 6),
+    order=None,
+    bbox_to_anchor=(0.98, 1.035),
+    save_path=None,
+    title=None,
+    title_pad=0,
+    xlabel=None,
+    xlabel_rotation=0,
+    ylabel=None,
+):
+    compositons = adata.obs.groupby([groupby, key]).size().unstack().fillna(0)
+    compositons = compositons.div(compositons.sum(axis=1), axis=0)
+
+    fig, ax = plt.subplots(figsize=figsize)
+    bottom = np.zeros(compositons.shape[0])
+    if order is None:
+        order = adata.obs[key].cat.categories.tolist()
+    with sns.axes_style("ticks"):
+        iterator = list(zip(order, colors))[::-1]
+        for k, (cell_type, color) in enumerate(iterator):
+            sns.barplot(
+                x=compositons.index,
+                y=compositons[cell_type],
+                ax=ax,
+                color=color,
+                width=0.8,
+                rasterized=True,
+                bottom=bottom,
+            )
+            bottom += compositons[cell_type]
+    # rotate xlabels
+    labels = ax.set_xticklabels(ax.get_xticklabels(), rotation=xlabel_rotation)
+    # construct custom legend with colors for each cell type label
+    handles = []
+    for k, cell_type in enumerate(order):
+        handles.append(
+            mpl.lines.Line2D(
+                [0],
+                [0],
+                marker="o",
+                color="w",
+                label=cell_type,
+                markerfacecolor=colors[k],
+                markersize=10,
+            )
+        )
+    # add legend without frame
+    ax.legend(
+        handles=handles, bbox_to_anchor=bbox_to_anchor, loc="upper left", frameon=False
+    )
+    if ylabel is not None:
+        ax.set_ylabel(ylabel)
+    else:
+        ax.set_ylabel("")
+    if xlabel is not None:
+        ax.set_xlabel(xlabel, labelpad=10)
+    else:
+        ax.set_xlabel("", labelpad=10)
+    ax.set_ylim([0, 1.0])
+    sns.despine(top=True, right=True)
+    if title is not None:
+        plt.title(title, pad=title_pad)
+    if save_path is not None:
+        plt.savefig(save_path, dpi=300, bbox_inches="tight", transparent=True)
+    plt.show()
+    return compositons
