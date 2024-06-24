@@ -2,6 +2,8 @@
 
 ### Instructions for single-cell analysis
 
+Our single-cell analysis consists of two parts one for the exploratory cohort and another for the treatment (Ustekinumab) cohort. Both analysis follow the same general workflow of processing, clustering, annotation, and lastly more specific downstream analysis.
+
 **System requirements and installation**
 
 We ran the code in an Ubuntu 20.04 environment. To setup the single-cell analysis Python environment, please run the following commands:
@@ -11,13 +13,16 @@ conda env create -f envs/sc-env.yml
 conda activate sc-env
 ```
 
+For the R-parts of our analysis we used R 4.1.1 and Seurat 4.0.4.
+
 **Data preparation**
 
-Place the cellranger-aligned data in the folder ```data```. For the correct version please refer to the methods section of the manuscript.
+You can find the Links to all raw and aligned single-cell data in Supplementary Table 10 of our manuscript. For ease of use we provide the processed and annotated single-cell data for the both cohorts as MuData objects. This data is deposited at GEO under accession GSE253633 alongside the new single-cell data of this study. Please place the files in their respective folders in the ```data``` directory.
+
 
 **Analysis workflow**
 
-The analysis workflow for the single-cell data (CITEseq and scRNAseq) is detailed in the folder ```notebooks\single-cell```. We further split the code for each cohort, namely the exploratory and the ustekinumab treatment cohort. The corresponding code is available in the folders ```notebooks\single-cell\exploratory_cohort``` and ```notebooks\single-cell\ustekinumab_cohort```, respectively.
+The analysis workflow for the single-cell data (CITEseq and scRNAseq) is detailed in the folder ```notebooks\single-cell```. We further split the code for each cohort, namely the exploratory and the ustekinumab treatment cohort. The corresponding code is available in the folders ```notebooks\single-cell\exploratory_cohort``` and ```notebooks\single-cell\ustekinumab_cohort```, respectively. There you can also find the code reproduce the figures in the manuscript, e.g., see ```notebooks\single-cell\exploratory_cohort\plot-main-figures.ipynb```.
 
 ### Instructions for Visium analysis
 
