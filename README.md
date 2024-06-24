@@ -21,6 +21,11 @@ The analysis workflow for the single-cell data (CITEseq and scRNAseq) is detaile
 
 ### Instructions for Visium analysis
 
+For reproducibility, we encourage to pull the docker image as was used in the Visium analysis. The docker image is available at [Docker hub](https://hub.docker.com/r/robinredx/anca-visium/tags) and can be pulled using
+```bash
+docker pull robinredx/anca-visium:latest
+```
+
 **Data preparation**
 1. Place the cellranger- and spaceranger-aligned data in folder ```data```. For the versions used in the manuscript, please refer to the methods section of the manuscript.
 2. Place the TIF files corresponding to each spatial sample in the folder ```tif_processed```
