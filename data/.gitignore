@@ -1,2 +1,15 @@
 *
+!single-cell
+single-cell/*
+!single-cell/.gitkeep
+!single-cell/T_cell_markers.xlsx
+
+!single-cell/exploratory
+single-cell/exploratory/*
+!single-cell/exploratory/.gitkeep
+
+!single-cell/ustekinumab
+single-cell/ustekinumab/*
+!single-cell/ustekinumab/.gitkeep
+
 !.gitignore
