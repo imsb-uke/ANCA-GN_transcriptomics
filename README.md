@@ -17,12 +17,17 @@ For the R-parts of our analysis we used R 4.1.1 and Seurat 4.0.4.
 
 **Data preparation**
 
-You can find the Links to all raw and aligned single-cell data in Supplementary Table 10 of our manuscript. For ease of use we provide the processed and annotated single-cell data for the both cohorts as MuData objects. This data is deposited at GEO under accession GSE253633 alongside the new single-cell data of this study. Please place the files in their respective folders in the ```data``` directory.
+You can find the Links to all raw and aligned single-cell data in Supplementary Table 10 of our manuscript. Please place the aligned data in separate folders in the ```data/single-cell/exploratory/alignment``` or  ```data/single-cell/ustekinumab/alignment```directory.
+
+For ease of use we provide the processed and annotated single-cell data for the both cohorts as MuData objects. This data is deposited at GEO under accession GSE253633 alongside the new single-cell data of this study. Please place the files in their respective folders in the ```data``` directory.
 
 
 **Analysis workflow**
 
-The analysis workflow for the single-cell data (CITEseq and scRNAseq) is detailed in the folder ```notebooks\single-cell```. We further split the code for each cohort, namely the exploratory and the ustekinumab treatment cohort. The corresponding code is available in the folders ```notebooks\single-cell\exploratory_cohort``` and ```notebooks\single-cell\ustekinumab_cohort```, respectively. There you can also find the code reproduce the figures in the manuscript, e.g., see ```notebooks\single-cell\exploratory_cohort\plot-main-figures.ipynb```.
+The analysis workflow for the single-cell data (CITEseq and scRNAseq) is detailed in the folder ```notebooks\single-cell```. We further split the code for each cohort, namely the exploratory and the ustekinumab treatment cohort. The corresponding code is available in the folders ```notebooks\single-cell\exploratory_cohort``` and ```notebooks\single-cell\ustekinumab_cohort```, respectively. Please use the notebooks in ```notebooks/single-cell/exploratory_cohort/00-preprocessing``` or ```notebooks/single-cell/ustekinumab_cohort/00-preprocessing``` for sample wise quality control and demultiplexing. Then you can proceed with the rest of the annotation workflow and downstream analysis.
+
+
+Both folders also contain the code to reproduce the figures in the manuscript from the processed and annotated data objects, e.g., see ```notebooks\single-cell\exploratory_cohort\plot-main-figures.ipynb```.
 
 ### Instructions for Visium analysis
 
