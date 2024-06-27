@@ -19,7 +19,7 @@ For the R-parts of our analysis we used R 4.1.1 and Seurat 4.0.4.
 
 You can find the Links to all raw and aligned single-cell data in Supplementary Table 10 of our manuscript. Please place the aligned data in separate folders in the ```data/single-cell/exploratory/alignment``` or  ```data/single-cell/ustekinumab/alignment```directory.
 
-For ease of use we provide the processed and annotated single-cell data for the both cohorts as MuData objects. This data is deposited at GEO under accession GSE253633 alongside the new single-cell data of this study. Please place the files in their respective folders in the ```data``` directory.
+For ease of use we provide the processed and annotated single-cell data for the both cohorts as MuData objects. This data is deposited at GEO under accession [GSE253633](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE253633) alongside the new single-cell data of this study. Please place the files in their respective folders in the ```data``` directory.
 
 
 **Analysis workflow**
