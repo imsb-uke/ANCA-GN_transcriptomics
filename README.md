@@ -31,9 +31,13 @@ Both folders also contain the code to reproduce the figures in the manuscript fr
 
 ### Instructions for Visium analysis
 
-For reproducibility, we encourage to pull the docker image as was used in the Visium analysis. The docker image is available at [Docker hub](https://hub.docker.com/r/robinredx/anca-visium/tags) and can be pulled using
+For reproducibility, the docker image is available at Dockerhub and can be pulled using
 ```bash
-docker pull robinredx/anca-visium:latest
+docker pull imsbuke/dsnb:20211025_jh1.4.2
+```
+The requirements regarding package versions is available in visium_requirements.txt and can be installed in docker container using
+```bash
+pip install -r visium_requirements.txt
 ```
 
 **Data preparation**
