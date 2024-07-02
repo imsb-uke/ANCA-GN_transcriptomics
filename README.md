@@ -6,14 +6,45 @@ Our single-cell analysis consists of two parts one for the exploratory cohort an
 
 **System requirements and installation**
 
-We ran the code in an Ubuntu 20.04 environment. To setup the single-cell analysis Python environment, please run the following commands:
+We ran the code in an Ubuntu 20.04 environment. The corresponding docker image can be obtained by running the following command:
 
 ```bash
+docker pull imsbuke/dsnb:20211025_jh1.4.2
+```
+You can then run the docker image with the following command and replace ```/PATH_TO_DATA``` with the path to the data on your local machine:
+
+```bash
+docker run -it -v /PATH_TO_DATA:/data --user root --name ustekinumab-test imsbuke/dsnb:20211025_jh1.4.2 bash
+```
+
+To setup the single-cell analysis Python environment, please run the following commands:
+
+```bash
+conda update -n base conda
+conda install -n base conda-libmamba-solver
+conda config --set solver libmamba
+export SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=True
 conda env create -f envs/sc-env.yml
 conda activate sc-env
 ```
 
-For the R-parts of our analysis we used R 4.1.1 and Seurat 4.0.4.
+To reproduce the figures you also need to install the Arial font. You can do this by running the following command:
+
+```bash
+apt-get update
+apt-get upgrade -y
+echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections
+echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula seen true" | sudo debconf-set-selections
+apt-get install ttf-mscorefonts-installer -y
+fc-cache -fv
+```
+
+For the R-parts of our analysis you need to install the following package:
+
+```R
+setRepositories(ind=1:3)
+install.packages("Signac")
+```
 
 **Data preparation**
 
