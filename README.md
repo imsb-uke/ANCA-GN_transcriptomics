@@ -32,20 +32,20 @@ Both folders also contain the code to reproduce the figures in the manuscript fr
 ### Instructions for Visium analysis
 
 **Dataset**
-The aligned data and processed and annotated data objects are available at [GSE250138](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE250138) The raw data is available through SRA with bioproject [PRJNA1052093](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1052093).
+The aligned data and processed and annotated data objects are available at [GSE250138](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE250138). The raw data is available through SRA with bioproject [PRJNA1052093](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1052093).
 
-For reproducibility, the docker image is available at Dockerhub and can be pulled using
+For reproducibility, the docker image is available at Dockerhub and can be pulled using,
 ```bash
 docker pull imsbuke/dsnb:20211025_jh1.4.2
 ```
-The requirements regarding package versions is available in visium_requirements.txt and can be installed in docker container using
+The requirements regarding package versions is available in visium_requirements.txt and can be installed in docker container using,
 ```bash
 pip install -r visium_requirements.txt
 ```
 
 **Data preparation**
 1. Place the cellranger- and spaceranger (v2.0.1)-aligned data in a single folder where each subfolder is a Visium slide_ID (_e.g._ V1_D) and contains the alignment results for the slide_ID. Update the path to the aligned datasets in the first notebook.
-2. Place the TIF files corresponding to each spatial sample in the folder ```tif_processed```
+2. Place the TIF files corresponding to each spatial sample in the folder ```tif_processed```.
 
 The folders ```annotations_visium*``` contain expert-annotations of the Visium slides.
 
