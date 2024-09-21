@@ -1,4 +1,6 @@
-## Code for the analysis of samples used in the manuscript "Immune profiling-based targeting of pathogenic T cells with ustekinumab in ANCA-associated glomerulonephritis"
+## Immune profiling-based targeting of pathogenic T cells with ustekinumab in ANCA-associated glomerulonephritis
+
+The manuscript is available at [Nature Communications](https://www.nature.com/articles/s41467-024-52525-w).
 
 ### Instructions for single-cell analysis
 
