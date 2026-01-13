@@ -84,6 +84,6 @@ The folders ```annotations_visium*``` contain expert-annotations of the Visium s
 
 **Analysis workflow**
 
-Guided code for required to reproduce the results is available in the folder ```notebooks```. The second step of the processing is too big to push to GitHub, this can be downloaded from [02_cluster.ipynb](https://drive.google.com/file/d/11mMGel0VzCgbqmvUIG5L2zHP9qBJGoqu/view?usp=sharing)
+Guided code for required to reproduce the results is available in the folder ```notebooks```.
 
 **If you encounter any problem, please open an issue.**
